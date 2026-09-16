@@ -47,7 +47,7 @@ def call_llm(prompt: str) -> str:
     Returns:
         LLM 生成的回复文本。
     """
-    model = os.getenv("LLM_MODEL", "gpt-6.0-astra")
+    model = os.getenv("LLM_MODEL", "gpt-6-astra")
     response = client.responses.create(
         model=model,
         input=prompt,
@@ -269,7 +269,7 @@ def run_agent(user_message: str, max_iterations: int = 5):
 
     for iteration in range(max_iterations):
         # ===== 第 1 步：调用 LLM（Think 阶段）=====
-        model = os.getenv("LLM_MODEL", "gpt-5.6-terra")
+        model = os.getenv("LLM_MODEL", "gpt-6-astra")
         response = client.responses.create(
             model=model,
             input=input_items,
@@ -350,22 +350,22 @@ TEST_CASES = [
         "name": "Test 1 - 简单问答（无需工具）",
         "message": "什么是 Python 编程语言？请用一句话回答。",
         "expected_tools": 0,
-    }
-    # {
-    #     "name": "Test 2 - 天气查询（单工具）",
-    #     "message": "上海今天天气怎么样？",
-    #     "expected_tools": 1,
-    # },
-    # {
-    #     "name": "Test 3 - 组合查询（搜索 + 计算）",
-    #     "message": "搜索一下什么是 LangChain，然后帮我算 123 * 456 等于多少。",
-    #     "expected_tools": 2,
-    # },
-    # {
-    #     "name": "Test 4 - 需要推理的复杂查询",
-    #     "message": "北京和深圳今天哪个城市更热？温度差多少？",
-    #     "expected_tools": 2,
-    # },
+    },
+    {
+        "name": "Test 2 - 天气查询（单工具）",
+        "message": "上海今天天气怎么样？",
+        "expected_tools": 1,
+    },
+    {
+        "name": "Test 3 - 组合查询（搜索 + 计算）",
+        "message": "搜索一下什么是 LangChain，然后帮我算 123 * 456 等于多少。",
+        "expected_tools": 2,
+    },
+    {
+        "name": "Test 4 - 需要推理的复杂查询",
+        "message": "北京和深圳今天哪个城市更热？温度差多少？",
+        "expected_tools": 2,
+    },
 ]
 
 
