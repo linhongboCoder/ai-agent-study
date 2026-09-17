@@ -489,16 +489,16 @@ if __name__ == "__main__":
     print("║       规划器 · 记忆系统 · 工具设计                    ║")
     print("╚══════════════════════════════════════════════════════╝")
 
-    print("\n▶ 2.1-2.2: 规划器示例（Plan-Execute）")
-    plan = plan_execute("分析特斯拉股票是否值得投资")
-    print(json.dumps(plan, indent=2, ensure_ascii=False))
+    # print("\n▶ 2.1-2.2: 规划器示例（Plan-Execute）")
+    # plan = plan_execute("分析特斯拉股票是否值得投资")
+    # print(json.dumps(plan, indent=2, ensure_ascii=False))
 
-    print("\n▶ 2.3: 工具设计对比演示")
-    demonstrate_tool_design()
+    # print("\n▶ 2.3: 工具设计对比演示")
+    # demonstrate_tool_design()
 
-    # print("\n▶ 2.4: 综合演示（需要 API 调用）")
-    # try:
-    #     run_full_demo()
-    # except Exception as e:
-    #     print(f"\n⚠️ 综合演示需要 API Key，错误信息: {e}")
-    #     print("请确保 .env 文件配置正确后重试。")
+    print("\n▶ 2.4: 综合演示（需要 API 调用）")
+    try:
+        run_full_demo()
+    except Exception as e:
+        print(f"\n⚠️ 综合演示需要 API Key，错误信息: {e}")
+        print("请确保 .env 文件配置正确后重试。")
